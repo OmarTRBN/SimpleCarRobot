@@ -1,0 +1,168 @@
+<?xml version="1.0" ?>
+<robot name="SimpleCarRobot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find SimpleCarRobot_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find SimpleCarRobot_description)/urdf/SimpleCarRobot.trans" />
+<xacro:include filename="$(find SimpleCarRobot_description)/urdf/SimpleCarRobot.gazebo" />
+
+<link name="base_link">
+  <inertial>
+    <origin xyz="-0.006225642035045943 0.0 0.05087125307915337" rpy="0 0 0"/>
+    <mass value="4.409937301003005"/>
+    <inertia ixx="0.014864" iyy="0.062745" izz="0.075501" ixy="0.0" iyz="0.0" ixz="-0.000485"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://SimpleCarRobot_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="blue"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://SimpleCarRobot_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="front_right_wheel_1">
+  <inertial>
+    <origin xyz="8.326672684688674e-17 -0.014111456121422603 4.163336342344337e-17" rpy="0 0 0"/>
+    <mass value="0.04588438904615645"/>
+    <inertia ixx="2.2e-05" iyy="3.8e-05" izz="2.2e-05" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.1 0.098 -0.05" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://SimpleCarRobot_description/meshes/front_right_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="black"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.1 0.098 -0.05" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://SimpleCarRobot_description/meshes/front_right_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="back_right_wheel_1">
+  <inertial>
+    <origin xyz="-8.326672684688674e-17 -0.014113126073852914 0.0" rpy="0 0 0"/>
+    <mass value="0.045878545683820826"/>
+    <inertia ixx="2.2e-05" iyy="3.8e-05" izz="2.2e-05" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.1 0.098 -0.05" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://SimpleCarRobot_description/meshes/back_right_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="black"/>
+  </visual>
+  <collision>
+    <origin xyz="0.1 0.098 -0.05" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://SimpleCarRobot_description/meshes/back_right_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="back_left_wheel_1">
+  <inertial>
+    <origin xyz="0.0 0.014111456121422561 6.245004513516506e-17" rpy="0 0 0"/>
+    <mass value="0.045884389046156444"/>
+    <inertia ixx="2.2e-05" iyy="3.8e-05" izz="2.2e-05" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.1 -0.098 -0.05" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://SimpleCarRobot_description/meshes/back_left_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="black"/>
+  </visual>
+  <collision>
+    <origin xyz="0.1 -0.098 -0.05" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://SimpleCarRobot_description/meshes/back_left_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="front_left_wheel_1">
+  <inertial>
+    <origin xyz="-4.163336342344337e-17 0.014111456121422561 6.938893903907228e-18" rpy="0 0 0"/>
+    <mass value="0.04588438904615646"/>
+    <inertia ixx="2.2e-05" iyy="3.8e-05" izz="2.2e-05" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.1 -0.098 -0.05" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://SimpleCarRobot_description/meshes/front_left_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="black"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.1 -0.098 -0.05" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://SimpleCarRobot_description/meshes/front_left_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="lidar_1">
+  <inertial>
+    <origin xyz="0.00039627994015795087 2.544123931108333e-16 0.010696139706805982" rpy="0 0 0"/>
+    <mass value="0.06157737068733859"/>
+    <inertia ixx="1.7e-05" iyy="1.7e-05" izz="2.7e-05" ixy="-0.0" iyz="-0.0" ixz="-1e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.12 -0.0 -0.105" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://SimpleCarRobot_description/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.12 -0.0 -0.105" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://SimpleCarRobot_description/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="front_right_wheel_rev" type="continuous">
+  <origin xyz="0.1 -0.098 0.05" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="front_right_wheel_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="back_right_wheel_rev" type="continuous">
+  <origin xyz="-0.1 -0.098 0.05" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="back_right_wheel_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="back_left_wheel_rev" type="continuous">
+  <origin xyz="-0.1 0.098 0.05" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="back_left_wheel_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="front_left_wheel_rev" type="continuous">
+  <origin xyz="0.1 0.098 0.05" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="front_left_wheel_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="lidar_rev" type="fixed">
+  <origin xyz="0.12 0.0 0.105" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="lidar_1"/>
+</joint>
+
+</robot>
